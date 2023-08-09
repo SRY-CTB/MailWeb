@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="utf-8">
+    <title>邮件ME | 你想告诉我什么呢😍</title>
+    <meta name="keywords" content="star skin,星空皮肤站,皮肤站,星空,starskin,minecraft,我的世界,星空皮肤站StarSkin">
+    <meta name="description" content="🎉StarSkin极致的浏览体验 | 高质量的服务水平 | StarSkin出品 必有新品 | 星空皮肤站 StarSkin，致力于为所有Minecraft玩家提供皮肤和披风，支持Github和Microsoft登录。星空皮肤站支持authlib-injector，使用皮肤站账号登录启动器。目前皮肤站这个在不断完善，欢迎大家的加入，同时希望更多的玩家为皮肤站上传更多资源！">
+    <link rel="shortcut icon" href="https://pic-up.star-skin.cn/i/2023/03/06/3d059006-a4e7-0791-3723-f1040a2aa8fe.png">
+    <link rel="icon" type="image/png" href="https://pic-up.star-skin.cn/i/2023/03/06/3d059006-a4e7-0791-3723-f1040a2aa8fe.png" sizes="192x192">
+    <link rel="apple-touch-icon" href="https://pic-up.star-skin.cn/i/2023/03/06/3d059006-a4e7-0791-3723-f1040a2aa8fe.png" sizes="180x180">
+    <script src="https://unpkg.com/vue@3.2.9/dist/vue.global.prod.js"></script>
+    <link rel="stylesheet" href="//assets.shanrenyi.top/css/sk-main/gg/vue.css">
+<head>
+    <style>
+        body {
+            background-color: rgb(40, 40, 40);
+        }
+
+
+        .colored {
+            color: #4dcd49;
+        }
+
+        .alert-box {
+            text-align: center;
+            margin-top: 30px;
+            display: inline-block;
+            background-color: rgba(43, 235, 0, 0.116);
+            border: 2px solid #78e16e;
+            padding: 10px;
+            border-radius: 4px;
+            color: #000000;
+            font-weight: bold;
+            width: 550px;
+        }
+          
+        .card {
+            width: 800px;
+            height: 490px;
+            background-color: rgb(34, 34, 34);
+            color: #ffffff;
+            border: 5px solid gray;
+            border-radius: 10px;
+            margin-right: 50px;
+            display: inline-block;
+            text-align: left;
+            padding: 20px;
+            margin-top: 40px;
+        }
+        
+        .card-p {
+            display: flex;
+            justify-content: center;
+            align-items: center; 
+        }
+        
+
+        button {
+          width: 100%;
+          height: 50px;
+          margin-bottom: 10px;
+          background-color: #83898b;
+          border-radius: 5px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          cursor: pointer;
+          color: #fff;
+          border: none;
+          transition: box-shadow 0.3s;
+        }
+
+        button:hover,
+        button:focus {
+          background-color: #636363;
+        }
+      
+        input {
+          width: 300px;
+          height: 40px;
+          border-radius: 5px;
+          border: none;
+          padding: 5px;
+          margin-bottom: 10px;
+          background-color: #fff;
+          color: #000;
+          transition: border-color 0.3s, box-shadow 0.3s;
+        }
+        
+        input:focus,
+        textarea:focus {
+          outline: none;
+          border-color: #444a4d;
+          box-shadow: 0 0 10px #444a4d;
+        }
+
+        textarea {
+          width: 750px;
+          height: 180px;
+          border-radius: 5px;
+          border: none;
+          padding: 5px;
+          margin-bottom: 10px;
+          background-color: #fff;
+          color: #000;
+          transition: border-color 0.3s, box-shadow 0.3s;
+        }
+
+        .vue-footer {
+            background-color: rgb(29, 29, 29);
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            color: #666;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.46);
+        }
+
+        .vue-footer-left {
+            margin-right: auto;
+        }
+
+        .vue-footer-right {
+            margin-left: auto;
+        }
+    </style>
+
+        <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        .container {
+            text-align: left;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        
+    </style>
+</head>
+
+<body>
+    <center>
+      <div id="app">
+        <alert-box>
+          
+            <p style="font-size: 16px; color: #ffffff;">尽情的书写吧。BUT 不要"img"，不要HTML</p>
+          
+        </alert-box>
+      </div>
+    </center>
+
+    <div class="card-p">
+    <div class="card">
+    <div class="container">
+        <div class="msg-response" id="msgResponse"></div>
+        <div class="container-2">
+        <label for="password">密钥:</label>
+        <input type="password" id="password" name="password">
+
+        <label for="subject">标题:</label>
+        <input type="text" id="subject" name="subject">
+      </div>
+
+      <label for="content">内容:</label>
+      <textarea id="content" name="content"></textarea>
+
+      <button onclick="sendRequest()">Send</button>
+    </div>
+    </div>
+    </div>
+
+    <div class="vue-footer" style="position: fixed; bottom: 0; left: 0; right: 0;">
+      <span class="vue-footer-right">小小提醒：页面以标准1920*1080编写，没有手机等其他设备适配哦</a></span>
+    </div>
+</body>
+
+  <!-- 警告框 -->
+  <script>
+    const app = Vue.createApp({});
+  
+    app.component('alert-box', {
+      template: `
+        <div class="alert-box">
+          <slot name="icon"></slot>
+          <slot></slot>
+        </div>
+      `
+    });
+  
+    app.mount('#app');
+  </script>
+
+<script>
+        function sendRequest() {
+            var password = document.getElementById("password").value;
+            var subject = document.getElementById("subject").value;
+            var content = document.getElementById("content").value;
+            
+            var apiUrl = `https://bt.shanrenyi.top:15854/mail_sys/send_mail_http.json?mail_from=admin@star-skin.cn&password=${password}&mail_to=Arenjunsanyan@126.com&subject=${subject}&content=${content}`;
+            
+            fetch(apiUrl);
+        }
+    </script>
+
+<script>
+  //禁止鼠标右击
+  document.oncontextmenu = function() {
+        event.returnValue = false;
+      };
+      //禁用开发者工具F12
+      document.onkeydown = document.onkeyup = document.onkeypress = function(event) {
+        let e = event || window.event || arguments.callee.caller.arguments[0];
+        if (e && e.keyCode == 123) {
+          e.returnValue = false;
+          return false;
+        }
+      };
+      let userAgent = navigator.userAgent;
+      if (userAgent.indexOf("Firefox") > -1) {
+        let checkStatus;
+        let devtools = /./;
+        devtools.toString = function() {
+          checkStatus = "on";
+        };
+        setInterval(function() {
+          checkStatus = "off";
+          console.log(devtools);
+          console.log(checkStatus);
+          console.clear();
+          if (checkStatus === "on") {
+            let target = "";
+            try {
+              window.open("about:blank", (target = "_self"));
+            } catch (err) {
+              let a = document.createElement("button");
+              a.onclick = function() {
+                window.open("about:blank", (target = "_self"));
+              };
+              a.click();
+            }
+          }
+        }, 200);
+      } else {
+        //禁用控制台
+        let ConsoleManager = {
+          onOpen: function() {
+            alert("Console is opened");
+          },
+          onClose: function() {
+            alert("Console is closed");
+          },
+          init: function() {
+            let self = this;
+            let x = document.createElement("div");
+            let isOpening = false,
+              isOpened = false;
+            Object.defineProperty(x, "id", {
+              get: function() {
+                if (!isOpening) {
+                  self.onOpen();
+                  isOpening = true;
+                }
+                isOpened = true;
+                return true;
+              }
+            });
+            setInterval(function() {
+              isOpened = false;
+              console.info(x);
+              console.clear();
+              if (!isOpened && isOpening) {
+                self.onClose();
+                isOpening = false;
+              }
+            }, 200);
+          }
+        };
+        ConsoleManager.onOpen = function() {
+          //打开控制台，跳转
+          let target = "";
+          try {
+            window.open("about:blank", (target = "_self"));
+          } catch (err) {
+            let a = document.createElement("button");
+            a.onclick = function() {
+              window.open("about:blank", (target = "_self"));
+            };
+            a.click();
+          }
+        };
+        ConsoleManager.onClose = function() {
+          alert("Console is closed!!!!!");
+        };
+        ConsoleManager.init();
+      }
+
+
+    window.addEventListener("keydown", function(e) {
+        //可以判断是不是mac，如果是mac,ctrl变为花键
+        //event.preventDefault() 方法阻止元素发生默认的行为。
+        if (e.keyCode == 83 && (navigator.platform.match("Mac") ? e.metaKey : e.ctrlKey)) {
+            e.preventDefault();
+            // Process event...
+            document.getElementById("test").innerHTML = "ctrl+s成功";
+        }
+    }, false);
+</script>

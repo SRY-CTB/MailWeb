@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="utf-8">
+    <title>邮件ME | 你想告诉我什么呢😍</title>
+    <meta name="keywords" content="star skin,星空皮肤站,皮肤站,星空,starskin,minecraft,我的世界,星空皮肤站StarSkin">
+    <meta name="description" content="🎉StarSkin极致的浏览体验 | 高质量的服务水平 | StarSkin出品 必有新品 | 星空皮肤站 StarSkin，致力于为所有Minecraft玩家提供皮肤和披风，支持Github和Microsoft登录。星空皮肤站支持authlib-injector，使用皮肤站账号登录启动器。目前皮肤站这个在不断完善，欢迎大家的加入，同时希望更多的玩家为皮肤站上传更多资源！">
+    <link rel="shortcut icon" href="https://pic-up.star-skin.cn/i/2023/03/06/3d059006-a4e7-0791-3723-f1040a2aa8fe.png">
+    <link rel="icon" type="image/png" href="https://pic-up.star-skin.cn/i/2023/03/06/3d059006-a4e7-0791-3723-f1040a2aa8fe.png" sizes="192x192">
+    <link rel="apple-touch-icon" href="https://pic-up.star-skin.cn/i/2023/03/06/3d059006-a4e7-0791-3723-f1040a2aa8fe.png" sizes="180x180">
+<head>
+    <style>
+        body {
+            background-color: rgb(40, 40, 40);
+        }
+
+        .card {
+            width: 200px;
+            height: 190px;
+            background-color: rgb(34, 34, 34);
+            color: #ffffff;
+            border: 5px solid gray;
+            border-radius: 10px;
+            margin-right: 50px;
+            display: inline-block;
+            text-align: center;
+            padding: 20px;
+            margin-top: 90px;
+            transition: transform 0.3s;
+            
+        }
+
+        .card-2 {
+            width: 200px;
+            height: 310px;
+            background-color: rgb(34, 34, 34);
+            color: #ffffff;
+            border: 5px solid gray;
+            border-radius: 10px;
+            margin-right: 50px;
+            display: inline-block;
+            text-align: center;
+            padding: 20px;
+            margin-top: 90px;
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .card-2:hover {
+            transform: translateY(-10px);
+        }
+
+        .card-p {
+            display: flex;
+            justify-content: center;
+            align-items: center; 
+        }
+
+        .title {
+            text-align: center;
+            margin-top: 80px;
+            font-size: 25px;
+            background-image: linear-gradient(to right, #8feb9e, #79e184, #63d768, #4dcd49, #34c222);
+            -webkit-background-clip:text;
+            -webkit-text-fill-color:transparent;
+        }
+
+        
+        .bold-hr {
+            border: none;
+            border-top: 4px solid #79e184;
+            margin: 20px 0;
+            width: 100px;
+            margin-top: 20px;
+            margin: 0 auto;
+        }
+
+        .colored {
+            color: #4dcd49;
+        }
+
+        button {
+            padding: 10px 40px;
+            font-size: 18px;
+            background-color: #008542;
+            color: #fff;
+            text-shadow: 0 2px 0 rgb(0 0 0 / 25%);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            border: 0;
+            z-index: 1;
+            user-select: none;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            white-space: unset;
+            padding: .8rem 1.5rem;
+            text-decoration: none;
+            font-weight: 900;
+            transition: all 0.7s cubic-bezier(0,.8,.26,.99);
+            }
+
+            button:before {
+            position: absolute;
+            pointer-events: none;
+            top: 0;
+            left: 0;
+            display: block;
+            width: 100%;
+            height: 100%;
+            content: '';
+            transition: .7s cubic-bezier(0,.8,.26,.99);
+            z-index: -1;
+            background-color: #008542!important;
+            box-shadow: 0 -4px rgb(21 108 0 / 50%) inset, 0 4px rgb(100 253 31 / 99%) inset, -4px 0 rgb(100 253 31 / 50%) inset, 4px 0 rgb(21 108 0 / 50%) inset;
+            }
+
+            button:after {
+            position: absolute;
+            pointer-events: none;
+            top: 0;
+            left: 0;
+            display: block;
+            width: 100%;
+            height: 100%;
+            content: '';
+            box-shadow: 0 4px 0 0 rgb(0 0 0 / 15%);
+            transition: .7s cubic-bezier(0,.8,.26,.99);
+            }
+
+            button:hover:before {
+            box-shadow: 0 -4px rgb(0 0 0 / 50%) inset, 0 4px rgb(255 255 255 / 20%) inset, -4px 0 rgb(255 255 255 / 20%) inset, 4px 0 rgb(0 0 0 / 50%) inset;
+            }
+
+            button:hover:after {
+            box-shadow: 0 4px 0 0 rgb(0 0 0 / 15%);
+            }
+
+            button:active {
+            transform: translateY(4px);
+            }
+
+            button:active:after {
+            box-shadow: 0 0px 0 0 rgb(0 0 0 / 15%);
+            }
+
+            .button-p {
+                text-align: center;
+                position: fixed;
+                bottom: 40px;
+                left: 0;
+                right: 0;
+            }
+
+            .content {
+                flex: 1;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                        }
+    </style>
+</head>
+
+<body>
+    <div class="title">
+        <h2>HI You Can Send Mail to Me !</h2>
+    </div>
+    <hr class="bold-hr">
+    <div class="card-p">
+        <div class="card">
+            <p style="font-size: 25px;">Hi <span class="colored">Friend</span> !</p>
+            <p style="font-size: 17px;">这里是个在线邮件发送的地方，<span class="colored">BUT</span> 只能发送给我！不要问为什么：就是<span class="colored">玩</span></p>
+        </div>
+        <div class="card-2">
+            <p style="font-size: 25px;">前情 <span class="colored">提要</span></p>
+            <p style="font-size: 17px;">这只是一个<span class="colored">简单</span>的利用邮件api进行发送邮件，固定了收件人为<span class="colored">ME</span>。不要闲着把api<span class="colored">拔出来</span>，外面第三方的多的是。我只是搭着<span class="colored">玩一玩</span>，为后面的事情做个小小基础。如果知晓，请点击<span class="colored">下方</span>的按钮，开始写邮件啦！</p>
+        </div>
+            </div>
+        </div>
+    </div>
+    <div class="content">
+        <div class="button-p">
+            <a href="./mail.html">
+                <button>BUTTON</button>
+            </a>
+        </div>
+    </div>
+</body>
